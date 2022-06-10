@@ -4,17 +4,31 @@
 
 <section class="jumbotron"></section>
 
+<section class="comics_section">
 
-<div class="container">
-    <div class="row">
+    <div class="container">
 
-        @foreach($comics as $comic)
-        <div class="col">
-            <img class="img-fluid" src="{{$comic['thumb']}}" alt="">
-        </div>
-        @endforeach
+        <div class="primary-btn" id="current_series_btn" >Current series</div>
+
+        <div class="row">
+
+            @foreach($comics as $comic)
+                <div class="col-2">
+                    <img src="{{$comic['thumb']}}" alt="">
+                    <h4>{{$comic['series']}}</h4>
+                </div>
+            @endforeach
+
+        </div> 
+        
+        <a href="#" class="primary-btn" id="load_more_btn">Load more</a>
 
     </div>
-</div>
+          
+</section>
+
+
+        
+
 
 @endsection

@@ -18,6 +18,51 @@ main {
         background-image: url('../img/jumbotron.jpg');
         background-size: cover;
     }
+    .comics_section {
+        background-color: $dc-banner-bg;
+        padding-bottom: 2rem;
+        .container {
+            position: relative;
+            .primary-btn {
+                background-color: $dc-primary;
+                color: white;
+                text-transform: uppercase;
+            }
+            #current_series_btn {
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                position: absolute;
+                transform: translate(-10px, -50%);
+            }
+            #load_more_btn {
+                width: fit-content;
+                display: block;
+                margin: auto;
+                padding: 0.5rem 2rem;
+                text-decoration: none;
+            }
+            .row {
+                padding: 2rem 0;
+                margin: 0 -1rem;
+                .col-2 {
+                    width: calc(2*100%/12 - 2rem);
+                    margin: 1rem;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        object-fit: cover;
+                        object-position: top;
+                    }
+                    h4 {
+                        color: white;
+                        text-transform: uppercase;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 

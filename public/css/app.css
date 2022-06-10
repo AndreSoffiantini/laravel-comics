@@ -10235,6 +10235,55 @@ main .jumbotron {
   background-image: url("../img/jumbotron.jpg");
   background-size: cover;
 }
+main .comics_section {
+  background-color: #1C1C1C;
+  padding-bottom: 2rem;
+}
+main .comics_section .container {
+  position: relative;
+}
+main .comics_section .container .primary-btn {
+  background-color: #0282F9;
+  color: white;
+  text-transform: uppercase;
+}
+main .comics_section .container #current_series_btn {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: absolute;
+  transform: translate(-10px, -50%);
+}
+main .comics_section .container #load_more_btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: auto;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+}
+main .comics_section .container .row {
+  padding: 2rem 0;
+  margin: 0 -1rem;
+}
+main .comics_section .container .row .col-2 {
+  width: calc(16.6666666667% - 2rem);
+  margin: 1rem;
+}
+main .comics_section .container .row .col-2 img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+main .comics_section .container .row .col-2 h4 {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
 
 /* Site Footer */
 #site_footer {
