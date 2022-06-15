@@ -14,27 +14,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $comics_data = config('db.comics');
+    //$comics_data = config('db.comics');
     //dd($comics_data);
-    $comics_collection = collect($comics_data);
+    //$comics_collection = collect($comics_data);
     //dd($comics_collection);
-    return view('homepage', compact('comics_collection'));
+    return view('home');
 })->name('home');
+
+Route::get('/comics', function () {
+    $comics = config('db.comics');
+
+    return view('comics.index', compact('comics'));
+})->name('comics.index');
 
 Route::get('/comics/{id}', function($id) {
     $comics = config('db.comics');
-    return view('comics.show', compact('comics'));
+    //dd($comics[$id]);
+    if (is_numeric($id) && $id >= 0 && $id < count($comics)) {
+        $comic = $comics[$id];
+        return view('comics.show', compact('comic'));
+    } else {
+        abort(404);
+    }
+    
 })->name('comics.show');
 
 Route::get('/characters', function () {
     return 'Characters page';
 })->name('characters');
-
-Route::get('/comics', function () {
-    $comics = config('db.comics');
-
-    return view('comics', compact('comics'));
-})->name('comics');
 
 Route::get('/movies', function () {
     return 'Movies page';
